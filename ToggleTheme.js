@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ThemeProvider } from 'styled-components/native';
+import { ThemeProvider, withTheme } from 'styled-components/native';
 import styled from 'styled-components/native';
 import { View, ScrollView, Image } from 'react-native';
 
@@ -78,16 +78,19 @@ const ToggleTheme = () => {
 };
 
 // Styled components
+
 const Container = styled.View`
   flex: 1;
+   background-color: ${(props) => props.theme.colors.background};
 `;
-
 
 const StyledText = styled.Text`
   font-size: 24px;
   margin-bottom: 20px;
   font-style:italic;
   font-weight: bold;
+  color: ${(props) => props.theme.colors.text};
+
 `;
 
 const ContentSection = styled.View`
